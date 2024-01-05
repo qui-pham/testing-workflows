@@ -1,4 +1,15 @@
-# Changelog
+## Changes log of v0.0.3 release
+
+## [v0.0.2-testnet](https://github.com/qui-pham/testing-workflows/tree/v0.0.2-testnet) (2024-01-05)
+
+[Full Changelog](https://github.com/qui-pham/testing-workflows/compare/v0.0.1-testnet...v0.0.2-testnet)
+
+**Merged pull requests:**
+
+- chore\(`testnet`\): merge from `merge/deploy/v0.0.2-testnet` [\#6](https://github.com/qui-pham/testing-workflows/pull/6) ([github-actions[bot]](https://github.com/apps/github-actions))
+- chore\(`release/v0.0.2`\): merge from `deploy/v0.0.2-testnet` [\#5](https://github.com/qui-pham/testing-workflows/pull/5) ([github-actions[bot]](https://github.com/apps/github-actions))
+- chore: init workflows [\#3](https://github.com/qui-pham/testing-workflows/pull/3) ([qui-pham](https://github.com/qui-pham))
+- feat\(ci\): implement `trigger` [\#2](https://github.com/qui-pham/testing-workflows/pull/2) ([github-actions[bot]](https://github.com/apps/github-actions))
 
 ## [v0.0.1-testnet](https://github.com/qui-pham/testing-workflows/tree/v0.0.1-testnet) (2024-01-05)
 

@@ -25,6 +25,8 @@ jobs:
       uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         ref: 'release/${{ env.VERSION }}'
+        fetch-depth: 0
+        fetch-tags: 'true'
 
     - name: Get Testnet Latest Tag
       if: ${{ env.NETWORK == 'testnet' }}
@@ -36,17 +38,18 @@ jobs:
       run: |
         echo "LATESTTAG=$(git describe --tags --match "*mainnet*" --abbrev=0)" >> $GITHUB_ENV
 
-    - name: Generate Release note
-      id: template
-      uses: heinrichreimer/action-github-changelog-generator@v2.3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        sinceTag: ${{ env.LASTESTTAG}}
-
     - name: Reset promotion branch
       run: |
         git fetch origin ${HEAD_BRANCH}:${HEAD_BRANCH}
         git reset --hard ${HEAD_BRANCH}
+
+    - name: Generate Release note
+      id: template
+      uses: heinrichreimer/action-github-changelog-generator@e60b5a2bd9fcd88dadf6345ff8327863fb8b490f # v2.4.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        sinceTag: ${{ env.LASTESTTAG}}
+        headerLabel: '## Changes log of ${{ env.VERSION }} release'
 
     - name: Create Pull Request
       id: cpr
