@@ -40,10 +40,11 @@ jobs:
 
     - name: Generate Release note
       id: template
-      uses: heinrichreimer/action-github-changelog-generator@v2.3
+      uses: heinrichreimer/action-github-changelog-generator@e60b5a2bd9fcd88dadf6345ff8327863fb8b490f # v2.4.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         sinceTag: ${{ env.LASTESTTAG}}
+        headerLabel: '## Changes log of ${{ env.VERSION }} release'
 
     - name: Reset promotion branch
       run: |
